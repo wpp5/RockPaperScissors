@@ -11,27 +11,31 @@ time.sleep(delay)
 x = "yes"
 while x == "yes":
     UserChoice = input("Please choose from the following. Rock, paper, scissors").lower()
-    ComputerChoice = random.choice(ComputerOptions)
-    time.sleep(delay)
-    print("You chose:",UserChoice)
-    time.sleep(delay)
-    print("Computer chose:",ComputerChoice)
-    time.sleep(delay)
-    if UserChoice == ComputerChoice:
-        print("It's tie!")
-    elif UserChoice == "paper" and ComputerChoice == "rock":
-        print("You win! Congrats")
-    elif UserChoice == "paper" and ComputerChoice == "scissors":
-        print("Oh! The computer won, that's ok!")
-    elif UserChoice == "rock" and ComputerChoice == "paper":
-        print("Oh! The computer won, that's ok!")
-    elif UserChoice == "rock" and ComputerChoice == "scissors":
-        print("You win! Congrats")
-    elif UserChoice == "scissors" and ComputerChoice == "paper":
-        print("You win! Congrats")
-    elif UserChoice == "scissors" and ComputerChoice == "rock":
-        print("Oh! The computer won, that's ok!")
-    print("Play again!")
+    if UserChoice in ComputerOptions:
+        ComputerChoice = random.choice(ComputerOptions)
+        time.sleep(delay)
+        print("You chose:",UserChoice)
+        time.sleep(delay)
+        print("Computer chose:",ComputerChoice)
+        time.sleep(delay)
+        if UserChoice == ComputerChoice:
+            print("It's tie!")
+        elif UserChoice == "paper" and ComputerChoice == "rock":
+            print("You win! Congrats")
+        elif UserChoice == "paper" and ComputerChoice == "scissors":
+            print("Oh! The computer won, that's ok!")
+        elif UserChoice == "rock" and ComputerChoice == "paper":
+            print("Oh! The computer won, that's ok!")
+        elif UserChoice == "rock" and ComputerChoice == "scissors":
+            print("You win! Congrats")
+        elif UserChoice == "scissors" and ComputerChoice == "paper":
+            print("You win! Congrats")
+        elif UserChoice == "scissors" and ComputerChoice == "rock":
+            print("Oh! The computer won, that's ok!")
+        time.sleep(delay)
+        print("Play again")
+    else:
+        print("Invalid input! Try again")
 
 
 
